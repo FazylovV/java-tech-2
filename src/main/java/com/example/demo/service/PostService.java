@@ -2,8 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.model.Post;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 
 @Service
@@ -11,9 +11,9 @@ public class PostService {
     private List<Post> posts;
     public PostService() {
         posts = new ArrayList<>();
-        posts.add(new Post("Первый пост", 10));
-        posts.add(new Post("Второй пост",  2));
-        posts.add(new Post("Третий пост",  1153));
+        posts.add(new Post("В Анапе", new GregorianCalendar(2023, Calendar.AUGUST, 17).getTime()));
+        posts.add(new Post("В Сочи",  new GregorianCalendar(2024, Calendar.JANUARY, 29).getTime()));
+        posts.add(new Post("В Турции",  new GregorianCalendar(2024, Calendar.FEBRUARY, 3).getTime()));
     }
 
     public List<Post> listAllPosts() {
