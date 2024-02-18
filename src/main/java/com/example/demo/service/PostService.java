@@ -8,12 +8,11 @@ import java.util.*;
 
 @Service
 public class PostService {
-    private List<Post> posts;
+    private final List<Post> posts = new ArrayList<>();
     public PostService() {
-        posts = new ArrayList<>();
-        posts.add(new Post("В Анапе", new GregorianCalendar(2023, Calendar.AUGUST, 17).getTime()));
-        posts.add(new Post("В Сочи",  new GregorianCalendar(2024, Calendar.JANUARY, 29).getTime()));
-        posts.add(new Post("В Турции",  new GregorianCalendar(2024, Calendar.FEBRUARY, 3).getTime()));
+        posts.add(new Post((long) 0, "В Анапе", new GregorianCalendar(2023, Calendar.AUGUST, 17).getTime()));
+        posts.add(new Post((long) 1, "В Сочи",  new GregorianCalendar(2024, Calendar.JANUARY, 29).getTime()));
+        posts.add(new Post((long) 2, "В Турции",  new GregorianCalendar(2024, Calendar.FEBRUARY, 3).getTime()));
     }
 
     public List<Post> listAllPosts() {
@@ -21,6 +20,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long) posts.size(), text, new Date()));
     }
 }

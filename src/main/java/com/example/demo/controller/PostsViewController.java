@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class PostsViewController {
     @Autowired
-    public PostService postService;
+    PostService postService;
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
