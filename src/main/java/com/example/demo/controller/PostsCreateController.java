@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PostsCreateController {
     @Autowired
-    public PostService postService;
+    private PostService postService;
     
     @RequestMapping(path = "/new", method = RequestMethod.GET)
     public String create(Model model) {
